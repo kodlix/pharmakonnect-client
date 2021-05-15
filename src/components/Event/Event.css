@@ -1,0 +1,24 @@
+/* hr {
+    border: 1px solid gray;
+    ;
+} */
+
+.zoomCard:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    background: rgba(173, 187, 192, 0.1);
+}
+
+.status-tab {
+    cursor: pointer;
+    background-color: #dae2e4;
+}
+
+.badge-dark {
+    background-color: #276678;
+    color: #fff;
+}
+
+.wrap-words {
+    float: left;
+}

@@ -1,0 +1,25 @@
+.zoomCard:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  background: rgba(173, 187, 192, 0.1);
+}
+
+.status-tab {
+  cursor: pointer;
+  background-color: #dae2e4;
+}
+
+.badge-dark {
+  background-color: #276678;
+  color: #fff;
+}
+
+.content p img {
+  width: 100%;
+  height: 20rem;
+  margin: 0% auto;
+}
+
+.blog-card{
+  height: 18rem !important;
+}

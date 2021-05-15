@@ -1,0 +1,10 @@
+.navbar-vertical .navbar-brand {
+    padding: 1rem 1.5rem 1.5rem;
+    margin-right: 0;
+    display: block;
+    color: #fff !important;
+}
+
+.h1, h1 {
+    font-size: 2rem;
+}

@@ -1,0 +1,32 @@
+.profileImg {
+    display: inline;
+    position: absolute;
+    margin-left: -27px;
+    top: 87px;
+}
+
+.point {
+    cursor: pointer;
+}
+
+/* Profile pic */
+.profilepic-container {
+    width: fit-content;
+    margin: auto;
+    position: relative;
+}
+
+.imgSave-btn {
+    width: 10%;
+    padding: 5px;
+}
+
+.profileImg-label {
+    cursor: pointer;
+    position: absolute;
+    bottom: 12px;
+    right: 0;
+    z-index: 1;
+}
+
+/* Profile pic */

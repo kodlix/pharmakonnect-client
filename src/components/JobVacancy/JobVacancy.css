@@ -1,0 +1,118 @@
+label {
+  font-size: 12px !important;
+}
+
+.jobDescription {
+  overflow: hidden;
+    max-height: 99.2px;
+
+}
+
+/* empty job vacancy icon */
+.fa-folder-open{
+  font-size: 200px;
+}
+
+/* QuillEditor height */
+.ql-editor{
+  height: 150px;
+  max-width: 874.33px;
+}
+
+/* job listing scroll bar */
+.scroll-bar-y {
+  overflow-y: scroll;
+  max-height: 714px;
+  min-height: 714px;
+}
+
+
+/* scrollbar style */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(255, 255, 255); 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #276678; 
+  border-radius: 10px;
+  border: 2px solid #5137b3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #593cc4; 
+}
+
+.empty-job-list-icon{
+  font-size: 10em;
+}
+
+
+/* DatePicker - yearOfIncorporation */
+.react-datepicker-wrapper{
+  display: block !important;
+}
+
+.react-datepicker__day--in-range:hover{
+  background-color: #6344d4 !important; 
+  color: #fff !important;
+}
+
+.react-datepicker__year .react-datepicker__year-text{
+  width: 3rem !important;
+}
+
+/* DatePicker - start - end date range */
+
+.react-datepicker__day--in-selecting-range {
+  background-color: #9d84f7 !important;
+}
+
+.react-datepicker__year-text--selected, .react-datepicker__year-text--keyboard-selected,.react-datepicker__day--keyboard-selected, .react-datepicker__day--in-range,.react-datepicker__day--in-selecting-range:hover, .react-datepicker__day--selected {
+  background-color: #276678 !important;
+  color: #fff !important;
+}
+
+.status-frame{
+    padding: 4px;
+    margin-left:5px;
+    transform: rotate(15deg);
+    width: fit-content;
+    display: inline-block;
+    border-width: 3px ;
+    border-style: solid;
+    font-size: 14px;
+}
+.rejection-seeDetails{
+text-decoration: underline !important;
+cursor: pointer;
+font-size: 12px;
+}
+.nav-link-tab.active {
+  background-color: #276678 !important;
+  color: #fff !important;
+}
+
+.nav-link-tab{
+  box-shadow: 0 3px 6px rgba(3,0,71,.1);
+  border-bottom: 2px solid rgba(173, 173, 173, 0.678) !important;
+  background-color: white;
+}
+
+.text-color-black{
+  color: black !important;
+}
+
+.wrap-des {
+  word-wrap: break-word;
+  width: 817px;
+}
+

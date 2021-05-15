@@ -1,0 +1,10 @@
+#layoutAuthentication .login{
+    padding: 7rem 0  3rem 0;
+}
+ .bg-login{
+    background-color: #0a495d !important;
+}
+
+form .form-label{
+    font-weight: 700;
+}

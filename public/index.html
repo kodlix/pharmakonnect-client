@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="/" />
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+  <link href="assets/fonts/feather/feather.css" rel="stylesheet" />
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/libs/bootstrap-select/dist/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="assets/css/theme.min.css">
+
+
+
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>PharmaConnect | Connecting you to great minds</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous">
+  </script>
+
+  <!-- <script src="assets/libs/jquery/dist/jquery.min.js"></script> -->
+  <script src="boostrap/libs/bootstrap/dist/bootstrap.min.js"></script>
+  <script src="assets/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+  <script src="/public/assets/js/bootstrap/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.min.js"></script>
+  <script>
+    var mini = true;
+
+    function toggleSidebar() {
+      if (mini) {
+        console.log("opening sidebar");
+        document.getElementById("mySidebar").style.width = "180px";
+        document.getElementById("main").style.marginLeft = "180px";
+        iconTextList = document.getElementsByClassName("icon-text")
+        for (var i = 0; i < iconTextList.length; i++) {
+          iconTextList[i].style.opacity = "1";
+          iconTextList[i].style.transition = "opacity 0.3s ease";
+        }
+        this.mini = false;
+      } else {
+        console.log("closing sidebar");
+        document.getElementById("mySidebar").style.width = "70px";
+        document.getElementById("main").style.marginLeft = "70px";
+        iconTextList = document.getElementsByClassName("icon-text")
+        for (var i = 0; i < iconTextList.length; i++) {
+          iconTextList[i].style.opacity = "0";
+          iconTextList[i].style.transition = "opacity 0.3s ease";
+        }
+
+        this.mini = true;
+      }
+    }
+
+    var element = document.getElementById("chat_settings");
+    element.classList.add("chat_settings_close");
+    var element = document.getElementById("web_chat_settings");
+    element.classList.add("chat_settings_close");
+
+    function openChatSettings() {
+      var element = document.getElementById("chat_settings");
+      element.classList.remove("chat_settings_close");
+      var element = document.getElementById("web_chat_settings");
+      element.classList.remove("chat_settings_close");
+      document.getElementById('webchatsidebar').style.display = "none";
+      document.getElementById('tabchatsidebar').style.display = "none";
+      document.getElementById('chat_searchbar').style.display = "none";
+      document.getElementById('plus_icon').style.display = "none";
+    }
+
+    function closeChatSettings() {
+      var element = document.getElementById("chat_settings");
+      element.classList.add("chat_settings_close");
+      var element = document.getElementById("web_chat_settings");
+      element.classList.add("chat_settings_close");
+      document.getElementById('webchatsidebar').style.display = "block";
+      document.getElementById('tabchatsidebar').style.display = "block";
+      document.getElementById('chat_searchbar').style.display = "block";
+      document.getElementById('plus_icon').style.display = "block";
+    }
+  </script>
+  <script src="js/script.js">
+    (function ($) {
+      "use strict";
+
+      $("#search-contact").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#chatsidebar ul li").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      jQuery(window).on('load resize', function () {
+
+        // Variable Declarations
+
+        var right_sidebar = $('.right-sidebar').width();
+        var left_sidebar = $('.left-sidebar').width();
+        var chat_bar = $('.chat').width();
+        var win_width = $(window).width();
+
+        $(".user-list-item").on('click', function () {
+          if ($(window).width() < 992) {
+            $('.left-sidebar').addClass('hide-left-sidebar');
+            $('.chat').addClass('show-chatbar');
+          }
+        });
+
+        $(".dream_profile_menu").on('click', function () {
+          $('.right-sidebar').addClass('show-right-sidebar');
+          $('.right-sidebar').removeClass('hide-right-sidebar');
+          if ($(window).width() > 991 && $(window).width() < 1201) {
+            $(".chat").css('margin-left', -chat_bar);
+          }
+          if ($(window).width() < 992) {
+            $('.chat').addClass('hide-chatbar');
+          }
+        });
+
+        $(".close_profile").on('click', function () {
+          $('.right-sidebar').addClass('hide-right-sidebar');
+          $('.right-sidebar').removeClass('show-right-sidebar');
+          if ($(window).width() > 991 && $(window).width() < 1201) {
+            $(".chat").css('margin-left', 0);
+          }
+          if ($(window).width() < 992) {
+            $('.chat').removeClass('hide-chatbar');
+          }
+        });
+        $(".nav-tabs a").on('click', function () {
+          $(this).tab('show');
+        });
+
+        $(".chat-header .left_side i").on('click', function () {
+          $('.left-sidebar').removeClass('hide-left-sidebar');
+          $('.chat').removeClass('show-chatbar');
+        });
+
+      });
+
+      //Rightside accordian
+      $('.accordion-col .accordion-title').on('click', function () {
+        $(this).next().slideToggle();
+        $(this).toggleClass('active');
+      });
+      //Custom modal click for status view
+      $('*[data-target="#status-modal"]').on('click', function () {
+        $('body').addClass('custom-model-open');
+      });
+      $('.custom-status-close').on('click', function () {
+        $('body').removeClass('custom-model-open');
+      });
+
+      // Tooltip
+      if ($('[data-toggle="tooltip"]').length > 0) {
+        $('[data-toggle="tooltip"]').tooltip();
+      }
+
+      //Custom scroll bar
+      if ($(window).width() > 992) {
+        if ($('.chat-body, .left-sidebar .sidebar-body, .right-sidebar').length > 0) {
+          $('.chat-body, .left-sidebar .sidebar-body, .right-sidebar').mCustomScrollbar();
+        }
+      }
+
+    })(jQuery);
+  </script>
+
+
+  <script src='../src/components/video-conference/utils/autolink.js'></script>
+
+
+</body>
+
+</html>
