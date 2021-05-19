@@ -3,11 +3,11 @@ import React from 'react';
 const DropDownOption = () => {
     return ( 
         <div className="form-group col-12">
-        <label className="form-label" for="address">Question Options
+        <label className="form-label" htmlFor="address">Question Options
             <small className="mx-1">(select one correct option)</small>
         </label>
         <div className="row">
-        <select class="custom-select custom-select-md mb-3">
+        <select className="custom-select custom-select-md mb-3">
             <option selected>Open this select menu</option>
             <option value="1">One</option>
             <option value="2">Two</option>

@@ -49,48 +49,48 @@ const List = (props) => {
                 </PageHeader>
                 <div className="shadow p-3 pt-5 bg-white rounded scroll-bar-y">
                       {/* Content */}
-                    <div class="py-2">
-                        <div class="container">
-                            <div class="row">
+                    <div className="py-2">
+                        <div className="container">
+                            <div className="row">
                                 {/* Tab content */}
-                                <div class="col-12">
-                                    <div class="tab-content">
+                                <div className="col-12">
+                                    <div className="tab-content">
                                         {/* Tab pane */}
-                                        <div class="pb-4" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
+                                        <div className="pb-4" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
                                             {/* Card */}
-                                            <div class="card mb-4 card-hover">
-                                                <div class="row no-gutters">
-                                                    <div class="col-lg-12 col-md-12 col-12">
+                                            <div className="card mb-4 card-hover">
+                                                <div className="row no-gutters">
+                                                    <div className="col-lg-12 col-md-12 col-12">
                                                         {/* Card body */}
                                                         {
                                                             polls && polls.length > 0 && polls.map((poll) => 
                                                                     
-                                                            <div class="card-body mb-3">
-                                                                <p class="badge bg-primary text-white">{poll.type}</p>
+                                                            <div className="card-body mb-3">
+                                                                <p className="badge bg-primary text-white">{poll.type}</p>
                                                                 { Date.parse(poll.endDate) > new Date() ?
-                                                                    <p class="badge bg-secondary text-white float-right">Inactive</p>:
-                                                                    <p class="badge bg-success text-white float-right">Active</p>
+                                                                    <p className="badge bg-secondary text-white float-right">Inactive</p>:
+                                                                    <p className="badge bg-success text-white float-right">Active</p>
                                                                 }
                                                                 <br />
-                                                                <h1 class="mb-2 font-weight-bold">
-                                                                    <Link to={`/polls/view/${poll.id}`} class="text-inherit">
+                                                                <h1 className="mb-2 font-weight-bold">
+                                                                    <Link to={`/polls/view/${poll.id}`} className="text-inherit">
                                                                         {poll.title}
                                                                     </Link>
                                                                 </h1>
-                                                                <p class="des mb-4">
+                                                                <p className="des mb-4">
                                                                     {poll.description}
                                                                 </p>
-                                                                <p class="mb-3 font-weight-bold">Created &nbsp; 
-                                                                    <time class="timeago"
+                                                                <p className="mb-3 font-weight-bold">Created &nbsp; 
+                                                                    <time className="timeago"
                                                                         datetime="2021-03-25T05:09:58+0000" title="25th March 2021">
                                                                              about  {moment(poll.createdAt).fromNow()}
                                                                         </time></p>                                                          
-                                                                <div class="row align-items-center no-gutters">
-                                                                    <div class="float-right">
-                                                                        <span class="text-muted" data-toggle="tooltip"
+                                                                <div className="row align-items-center no-gutters">
+                                                                    <div className="float-right">
+                                                                        <span className="text-muted" data-toggle="tooltip"
                                                                             data-placement="top" title=""
                                                                             data-original-title="Add to Bookmarks">
-                                                                            <span class="badge badge-secondary">11 Votes</span>
+                                                                            <span className="badge badge-secondary">11 Votes</span>
                                                                         </span>
                                                                     </div>
                                                                 </div>

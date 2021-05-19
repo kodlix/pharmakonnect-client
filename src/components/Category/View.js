@@ -129,8 +129,8 @@ const View = (props) => {
                             </div>
 
                             <div className="categoryName">
-                                <button type="button" class="btn btn-secondary btn-sm">#{category?.title}</button>
-                                <div class="description mb-3 text-wrap">
+                                <button type="button" className="btn btn-secondary btn-sm">#{category?.title}</button>
+                                <div className="description mb-3 text-wrap">
                                     <p>{category?.body}</p>
                                 </div>
                             </div>

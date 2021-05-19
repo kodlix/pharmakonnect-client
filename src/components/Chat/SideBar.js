@@ -68,13 +68,13 @@ const SideBar = () => {
 
 
 
-            {/* <div id="mySidebar" class="web-sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
-        <a href="#"><i class="material-icons">dashboard</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</span></a><br />
-        <a href="#"><i class="material-icons">contacts</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Contacts</span></a><br />
-        <a href="#"><i class="material-icons">chat</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Chat</span></a><br />
-        <a href="#"><i class="material-icons">groups</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Conference</span></a><br />
-        <a href="#"><i class="material-icons">event</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Events</span></a><br />
-        <a href="#"><i class="material-icons">settings</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Settings</span></a><br />
+            {/* <div id="mySidebar" className="web-sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+        <a href="#"><i className="material-icons">dashboard</i><span className="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</span></a><br />
+        <a href="#"><i className="material-icons">contacts</i><span className="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Contacts</span></a><br />
+        <a href="#"><i className="material-icons">chat</i><span className="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Chat</span></a><br />
+        <a href="#"><i className="material-icons">groups</i><span className="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Conference</span></a><br />
+        <a href="#"><i className="material-icons">event</i><span className="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Events</span></a><br />
+        <a href="#"><i className="material-icons">settings</i><span className="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Settings</span></a><br />
     </div> */}
         </React.Fragment>
     )

@@ -48,7 +48,6 @@ export function LoadEventType(data) {
 
 
 //Actions
-
 export function createEventType(eventtype) {
     return dispatch => {
         return agent.EventType.save(eventtype).then(

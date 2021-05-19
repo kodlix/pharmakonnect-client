@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PageHeader from '../Shared/PageHeader';
 import DatePicker from "react-datepicker";
-
 import { loadEventTypes } from '../../store/modules/eventType';
 import { createEvent } from '../../store/modules/event';
-import './Event.css';
 import "react-datepicker/dist/react-datepicker.css";
+import { validFileType } from '../Shared/helpers/file';
+
+import './Event.css';
+
 
 
 const Create = () => {
@@ -24,10 +26,12 @@ const Create = () => {
     const evtEndTime = watch("endTime");
 
     const [uniqueAccessCode, setUniqueAccessCode] = useState("");
-    const [eventIsOnline, setEventIsOnline] = useState("");
+    const [eventIsOnline, setEventIsOnline] = useState(false);
     const [eventIsFree, setEventIsFree] = useState(true);
     const [showUrlInput, setShowUrlInput] = useState(true);
     const [requireAccessCode, setRequireAccessCode] = useState(false)
+    const [coverImage, setCoverImage] = useState("");
+
     const eventTypeLoaded = useSelector(state => state.eventType.eventTypes);
 
     const uniqueCode = () => {
@@ -40,6 +44,18 @@ const Create = () => {
         setRequireAccessCode(!requireAccessCode);
         console.log({ requireAccessCode });
     }
+
+    const handleChange = e => {
+        if (e.target.files.length) {
+            const valid = validFileType(e.target.files[0])
+            if (!valid) {
+                alert("only image of type (png, jpg, jpeg) file is allowed");
+                return;
+            }
+
+            setCoverImage(e.target.files[0]);
+        }
+    };
 
     const handleUniqueCode = (e) => {
         let userValue = e.target.checked;
@@ -86,6 +102,8 @@ const Create = () => {
 
     const onSubmit = (eventdata) => {
 
+
+
         if (eventIsOnline) {
             eventdata.venue = eventIsOnline;
         }
@@ -94,15 +112,28 @@ const Create = () => {
         } else {
 
         }
-        eventdata.cost = parseInt(eventdata.cost);
-        eventdata.numberOfParticipants = parseInt(eventdata.numberOfParticipants);
-        console.log({ eventdata })
-        const formData = new FormData()
-        formData.append("coverImage", eventdata.coverImage[0]);
-        console.log({ eventdata });
-        // return;
+        const formData = new FormData();
+        formData.append('coverImage', coverImage);
+        formData.append('organizerName', eventdata.organizerName);
+        formData.append('organizerPhoneNumber', eventdata.organizerPhoneNumber);
+        formData.append('name', eventdata.name);
+        formData.append('eventType', eventdata.eventType);
+        formData.append('numberOfParticipants', eventdata.numberOfParticipants);
+        formData.append('free', eventIsFree);
+        formData.append('cost', eventdata.cost);
+        formData.append('startTime', eventdata.startTime);
+        formData.append('endTime', eventdata.endTime);
+        formData.append('startDate', eventdata.startDate);
+        formData.append('endDate', eventdata.endDate);
+        formData.append('venue', eventdata.venue);
+        formData.append('url', eventdata.url);
+        formData.append('description', eventdata.description);
+        formData.append('requireUniqueAccessCode', eventdata.requireUniqueAccessCode);
+        formData.append('accessCode', eventdata.accessCode);
+        formData.append('requireRegistration', eventdata.requireRegistration);
+        formData.append('online', eventIsOnline);
 
-        dispatch(createEvent(eventdata))
+        dispatch(createEvent(formData))
     }
 
 
@@ -192,7 +223,7 @@ const Create = () => {
                                 <div className="mb-3 col-md-6">
                                     <label htmlFor="cost" className="form-label">Cost * &nbsp;
                                      ( <input type="checkbox" onClick={toggleEventCost} name="free"
-                                            className="align-text-bottom" defaultChecked />
+                                            className="align-text-bottom" checked={eventIsFree} />
                                         <small className="font-weight-bold"> This Event is Free</small> )
                                         <span className="text-danger font-weight-bold">
                                             {errors.cost && " Event cost is required"}</span></label>
@@ -306,7 +337,7 @@ const Create = () => {
                                 <div className="mb-3 col-md-6">
                                     <label htmlFor="venue" className="form-label">Event venue * &nbsp;
                                      ( <input type="checkbox" onClick={toggleEventVenue} name="online"
-                                            className="align-text-bottom" />
+                                            className="align-text-bottom" checked={eventIsOnline} value={eventIsOnline} />
                                         <small className="font-weight-bold"> This Event is Online</small> )
                                         <span className="text-danger font-weight-bold">
                                             {errors.venue && " Event venue is required"}</span></label>
@@ -347,12 +378,13 @@ const Create = () => {
                                             id="coverImage"
                                             name="coverImage"
                                             ref={register()}
+                                            onChange={handleChange}
                                         />
                                     </div>
                                 </div>
 
                                 <div className="form-group col-12 col-md-12">
-                                    <label className="form-label" for="description">Description {errors.description && <span className="text-danger font-weight-bold"> * {errors.description.message}</span>}</label>
+                                    <label className="form-label" htmlFor="description">Description {errors.description && <span className="text-danger font-weight-bold"> * {errors.description.message}</span>}</label>
                                     <textarea id="description"
                                         className="form-control"
                                         placeholder="Give a description of the type of event"
@@ -398,8 +430,6 @@ const Create = () => {
                                         <input className="form-check-input"
                                             type="checkbox"
                                             ref={register({})}
-                                            // value={requireAccessCode}
-                                            // onChecked={e => handleCheckChange(e)}
                                             id="requireRegistration"
                                             name="requireRegistration" />
                                         <label className="form-check-label font-weight-bold" htmlFor="requireRegistration" >

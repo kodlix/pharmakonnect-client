@@ -247,7 +247,7 @@ const Detail = (props) => {
                             <div class="modal-body">
                                 <form onSubmit={handleSubmit(onBlogReject)}>
                                     <div class="form-group">
-                                        <label for="message-text" class="col-form-label">Message:
+                                        <label htmlFor="message-text" class="col-form-label">Message:
                                         <span className="p-2 text-danger"> {errors.message && " rejection message is required."}</span>
                                         </label>
                                         <textarea class="form-control" 

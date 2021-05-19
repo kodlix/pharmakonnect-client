@@ -90,7 +90,7 @@ const List = (props) => {
                                                 <span className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                     <Link to={`/outlet/edit/${outlet.id}`} className="dropdown-item"><i
                                                         className="fe fe-edit dropdown-item-icon"></i>Edit</Link>
-                                                        <div class="dropdown-divider"></div>
+                                                        <div className="dropdown-divider"></div>
                                                     <Link className="dropdown-item text-danger" onClick={() => handleDeleteOutlet(outlet.id)}><i
                                                         className="fe fe-trash dropdown-item-icon text-danger"></i>Delete</Link>
                                                 </span>

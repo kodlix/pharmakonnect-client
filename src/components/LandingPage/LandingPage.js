@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import AppLogo from '../Shared/AppLogo';
-import {Carousel} from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 
 
 const LandingPage = () => {
@@ -15,8 +15,8 @@ const LandingPage = () => {
                         <div className="luvion-responsive-menu">
                             <div className="logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo.png" alt="logo"/>
-                                    <img src="assets/img/black-logo.png" alt="logo"/>
+                                    <img src="assets/img/logo.png" alt="logo" />
+                                    <img src="assets/img/black-logo.png" alt="logo" />
                                 </a>
                             </div>
                         </div>
@@ -27,8 +27,8 @@ const LandingPage = () => {
                     <div className="container">
                         <nav className="navbar navbar-expand-md navbar-light">
                             <a className="navbar-brand" href="index.html">
-                                <img src="assets/img/logo.png" alt="logo"/>
-                                <img src="assets/img/black-logo.png" alt="logo"/>
+                                <img src="assets/img/logo.png" alt="logo" />
+                                <img src="assets/img/black-logo.png" alt="logo" />
                             </a>
 
                             <div className="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -72,7 +72,7 @@ const LandingPage = () => {
                             <div className="main-banner-content">
                                 <h1>KAPSUUL</h1>
                                 <p>Connecting you to great minds and giving you insights to build, and grow your business.</p>
-                                <a href="#" className="btn btn-primary">Get Started</a>
+                                <Link to="/register" className="btn btn-primary">Get Started</Link>
                             </div>
                         </div>
                     </div>
@@ -134,11 +134,11 @@ const LandingPage = () => {
                                 <h2>About KAPSUUL</h2>
                                 <div className="bar"></div>
                                 <p>KAPSUUL helps pharmacists, and pharmaceutical organizations bring their teams together in a frictionless environment to get more done. Our easy, reliable cloud platform for video, voice, content sharing, and chat runs across mobile devices and desktops.
-                                    <br/>
-                                    <br/>
+                                    <br />
+                                    <br />
                                     It also has exciting features for easy collaboration and ability to do much more by giving organisations opportunity to advertise their products, engage services of other professionals, organise seminars and basic discussion forums.
-                                    <br/>
-                                    <br/>
+                                    <br />
+                                    <br />
                                     KAPSUUL is powered by GleanForte Academy Limited in collaboration with Netop Business Consulting Limited.</p>
                                 <a href="#" className="btn btn-primary">Read More</a>
 
@@ -147,10 +147,10 @@ const LandingPage = () => {
 
                         <div className="overview-image">
                             <div className="image">
-                                <img src="assets/img/1.png" alt="image"/>
+                                <img src="assets/img/1.png" alt="image" />
 
                                 <div className="circle-img">
-                                    <img src="assets/img/circle.png" alt="image"/>
+                                    <img src="assets/img/circle.png" alt="image" />
                                 </div>
                             </div>
                         </div>
@@ -232,7 +232,7 @@ const LandingPage = () => {
 
                         <div className="col-lg-7 col-md-12">
                             <div className="features-image">
-                                <img src="assets/img/features-img1.png" alt="image"/>
+                                <img src="assets/img/features-img1.png" alt="image" />
                             </div>
                         </div>
                     </div>
@@ -244,16 +244,16 @@ const LandingPage = () => {
                         <div className="col-lg-6 col-md-12">
                             <div className="app-image">
                                 <div className="main-image">
-                                    <img src="assets/img/mobile-app1.png" className="wow fadeInLeft" data-wow-delay="0.6s" alt="image"/>
-                                    <img src="assets/img/mobile-app2.png" className="wow fadeInUp" data-wow-delay="0.9s" alt="image"/>
+                                    <img src="assets/img/mobile-app1.png" className="wow fadeInLeft" data-wow-delay="0.6s" alt="image" />
+                                    <img src="assets/img/mobile-app2.png" className="wow fadeInUp" data-wow-delay="0.9s" alt="image" />
                                 </div>
 
                                 <div className="main-mobile-image">
-                                    <img src="assets/img/main-mobile.png" className="wow fadeInUp" data-wow-delay="0.6s" alt="image"/>
+                                    <img src="assets/img/main-mobile.png" className="wow fadeInUp" data-wow-delay="0.6s" alt="image" />
                                 </div>
 
                                 <div className="circle-img">
-                                    <img src="assets/img/circle.png" alt="image"/>
+                                    <img src="assets/img/circle.png" alt="image" />
                                 </div>
                             </div>
                         </div>
@@ -286,7 +286,7 @@ const LandingPage = () => {
                 <div className="container">
                     <div className="account-create-content">
                         <h2>Join other professionals Now!</h2>
-                        <a href="#" className="btn btn-primary">Click here to Register</a>
+                        <Link to="/register" className="btn btn-primary">Click here to Register</Link>
                     </div>
                 </div>
             </section>
@@ -296,7 +296,7 @@ const LandingPage = () => {
                         <div className="col-lg-3 col-sm-6 col-md-6">
                             <div className="single-footer-widget">
                                 <div className="logo">
-                                    <a href="index.html"><img src="assets/img/black-logo.png" alt="logo"/></a>
+                                    <a href="index.html"><img src="assets/img/black-logo.png" alt="logo" /></a>
                                     <p>Connecting you to great minds and giving you insights to build, and grow your business.</p>
                                 </div>
 
@@ -400,7 +400,7 @@ const LandingPage = () => {
                     </div>
                 </div>
 
-                <div className="map-image"><img src="assets/img/map.png" alt="map"/></div>
+                <div className="map-image"><img src="assets/img/map.png" alt="map" /></div>
             </footer>
 
         </>

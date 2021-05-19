@@ -148,25 +148,25 @@ const View = (props) => {
                             }
 
 
-                            <div class="better">
-                                <h4 class="health mb-1 mt-3 text-left">
+                            <div className="better">
+                                <h4 className="health mb-1 mt-3 text-left">
                                     {blogView?.title}
                                 </h4>
-                                <div class="tags mb-3">
+                                <div className="tags mb-3">
 
                                 </div>
-                                <div class="row">
-                                    <div class="col-auto">
+                                <div className="row">
+                                    <div className="col-auto">
                                         <img src={IMAGE_URL + blogView?.author.profileImage} alt="" class="rounded-circle avatar-sm mr-2" />
-                                        {/* <img src="assets/images/nutrition-2.jpg" class="rounded-circle avatar-sm mr-3" alt="..." /> */}
+                                        {/* <img src="assets/images/nutrition-2.jpg" className="rounded-circle avatar-sm mr-3" alt="..." /> */}
                                     </div>
-                                    <div class="col lh-1">
-                                        <h6 class="mb-1" style={{ marginLeft: "-16px" }}>{blogView?.author?.firstName} {blogView?.author?.lastName}</h6>
+                                    <div className="col lh-1">
+                                        <h6 className="mb-1" style={{ marginLeft: "-16px" }}>{blogView?.author?.firstName} {blogView?.author?.lastName}</h6>
 
-                                        <div class="row">
-                                            <p class="font-size-xs mb-0">{moment(blogView?.createdAt).format("MMMM Do, YYYY")}</p> &nbsp; &nbsp; &nbsp; &nbsp;
-                                        {/* <span class="color-base-30 px-2" role="presentation">•</span>
-                                            <p class="font-size-xs mb-0">{moment(blogView?.createdAt).format('hh : mm')} Min Read</p> */}
+                                        <div className="row">
+                                            <p className="font-size-xs mb-0">{moment(blogView?.createdAt).format("MMMM Do, YYYY")}</p> &nbsp; &nbsp; &nbsp; &nbsp;
+                                        {/* <span className="color-base-30 px-2" role="presentation">•</span>
+                                            <p className="font-size-xs mb-0">{moment(blogView?.createdAt).format('hh : mm')} Min Read</p> */}
                                         </div>
                                     </div>
                                 </div>
@@ -177,36 +177,36 @@ const View = (props) => {
                                 </p>
                                 <hr />
                                 <div className="mt-0">
-                                    <a class="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left text-primary" data-reaction-count="" data-reactable-id="604311">
-                                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aibuob2r154cicj7f0vlr14it2ksm3i9" class="crayons-icon"><title id="aibuob2r154cicj7f0vlr14it2ksm3i9">Reactions</title><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg> */}
-                                        <i class="fas fa-thumbs-up ml-2 mr-2" title="Like"></i>
+                                    <a className="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left text-primary" data-reaction-count="" data-reactable-id="604311">
+                                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aibuob2r154cicj7f0vlr14it2ksm3i9" className="crayons-icon"><title id="aibuob2r154cicj7f0vlr14it2ksm3i9">Reactions</title><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg> */}
+                                        <i className="fas fa-thumbs-up ml-2 mr-2" title="Like"></i>
                                         {comment.likes}
-                                        <span class="hidden s:inline"></span>
+                                        <span className="hidden s:inline"></span>
                                     </a>
                                     <span>&nbsp;|</span>
-                                    <a class="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left text-primary" data-reaction-count="" data-reactable-id="604311">
-                                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aibuob2r154cicj7f0vlr14it2ksm3i9" class="crayons-icon">
+                                    <a className="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left text-primary" data-reaction-count="" data-reactable-id="604311">
+                                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aibuob2r154cicj7f0vlr14it2ksm3i9" className="crayons-icon">
                                                     <path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg> */}
-                                        <i class="fas fa-thumbs-down ml-2 mr-2" title="Dislike"></i>
+                                        <i className="fas fa-thumbs-down ml-2 mr-2" title="Dislike"></i>
                                         {comment.dislikes}
-                                        <span class="hidden s:inline"></span>
+                                        <span className="hidden s:inline"></span>
                                     </a>
                                     <button className="btn-xs btn btn-light text-danger mr-2 mt-1 float-right" title="share">share</button>
                                 </div>
 
-                                <div class="row mt-3 mb-3">
-                                    <div class="col md-11">
+                                <div className="row mt-3 mb-3">
+                                    <div className="col md-11">
                                         <h4>{blogView?.comments.length} Comments</h4>
                                     </div>
-                                    {/* <div class="col md-1 text-right">
-                                        <button type="button" class="btn btn-outline-dark btn-md"><span style={{ fontSize: "15px" }}>Subscribe</span></button>
+                                    {/* <div className="col md-1 text-right">
+                                        <button type="button" className="btn btn-outline-dark btn-md"><span style={{ fontSize: "15px" }}>Subscribe</span></button>
                                     </div> */}
                                 </div>
-                                <ul class="media">
-                                    <img src={IMAGE_URL + blogView?.author.profileImage} class="rounded-circle avatar-sm mr-3" alt="..." />
-                                    <form class="media-body" >
-                                        <div class="form-group" >
-                                            <textarea ref={userComment} class="form-control" name="comment" id="comment" placeholder="Add Comment" rows="2"></textarea>
+                                <ul className="media">
+                                    <img src={IMAGE_URL + blogView?.author.profileImage} className="rounded-circle avatar-sm mr-3" alt="..." />
+                                    <form className="media-body" >
+                                        <div className="form-group" >
+                                            <textarea ref={userComment} className="form-control" name="comment" id="comment" placeholder="Add Comment" rows="2"></textarea>
                                            {!onEdit &&  <button onClick={createUserComment} className="btn-xs btn btn-primary text-white mr-2 mt-1 float-right">Comment</button> }
                                             {onEdit && <button onClick={() => onEditCommentClick(currentComment.id)}  className="btn-xs btn btn-primary text-white mr-2 mt-1 float-right">Edit Comment</button> }
 
@@ -215,14 +215,14 @@ const View = (props) => {
                                 </ul>
 
                                 {blogView?.comments.map(comment =>
-                                    <ul class="media">
-                                        <img src={IMAGE_URL + blogView?.author.profileImage} class="rounded-circle avatar-sm mr-2" />
-                                        <div class="media-body">
-                                            <div class="card" style={{ backgroundColor: "#c9d6d6ad" }}>
-                                                <div class="card-body py-2">
-                                                    <div class="mr-3 ml-3">
-                                                        <div class="row media">
-                                                            <h6 class="font-size-xs mb-0 text-primary">{comment?.author}</h6>
+                                    <ul className="media">
+                                        <img src={IMAGE_URL + blogView?.author.profileImage} className="rounded-circle avatar-sm mr-2" />
+                                        <div className="media-body">
+                                            <div className="card" style={{ backgroundColor: "#c9d6d6ad" }}>
+                                                <div className="card-body py-2">
+                                                    <div className="mr-3 ml-3">
+                                                        <div className="row media">
+                                                            <h6 className="font-size-xs mb-0 text-primary">{comment?.author}</h6>
                                                             {
                                                                 dataInLocal.accountId === blogView?.author.id &&
                                                                 <div className="dropdown" style={{ float: "right", marginLeft: "316px" }}>
@@ -236,32 +236,32 @@ const View = (props) => {
                                                                 </div>
                                                             }
 
-                                                            {/* <p class="font-size-xs mb-0"></p> */}
+                                                            {/* <p className="font-size-xs mb-0"></p> */}
                                                         </div>
                                                         <hr />
                                                     </div>
                                                     <p>{comment?.message}</p>
                                                 </div>
                                             </div>
-                                            <div class="row align-items-center no-gutters mt-2">
-                                                <a class="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left text-primary" data-reaction-count="" data-reactable-id="604311">
-                                                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aibuob2r154cicj7f0vlr14it2ksm3i9" class="crayons-icon"><title id="aibuob2r154cicj7f0vlr14it2ksm3i9">Reactions</title><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg> */}
-                                                    <i onClick={() => like(comment.id)} class="fas fa-thumbs-up ml-2 mr-2" title="Like"></i>
+                                            <div className="row align-items-center no-gutters mt-2">
+                                                <a className="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left text-primary" data-reaction-count="" data-reactable-id="604311">
+                                                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aibuob2r154cicj7f0vlr14it2ksm3i9" className="crayons-icon"><title id="aibuob2r154cicj7f0vlr14it2ksm3i9">Reactions</title><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg> */}
+                                                    <i onClick={() => like(comment.id)} className="fas fa-thumbs-up ml-2 mr-2" title="Like"></i>
                                                     {comment.likes}
-                                                    <span class="hidden s:inline"></span>
+                                                    <span className="hidden s:inline"></span>
                                                 </a>
                                                 <span>&nbsp;|</span>
-                                                <a class="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left text-primary" data-reaction-count="" data-reactable-id="604311">
-                                                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aibuob2r154cicj7f0vlr14it2ksm3i9" class="crayons-icon">
+                                                <a className="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left text-primary" data-reaction-count="" data-reactable-id="604311">
+                                                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aibuob2r154cicj7f0vlr14it2ksm3i9" className="crayons-icon">
                                                     <path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg> */}
-                                                    <i onClick={() => disLike(comment.id)} class="fas fa-thumbs-down ml-2 mr-2" title="Dislike"></i>
+                                                    <i onClick={() => disLike(comment.id)} className="fas fa-thumbs-down ml-2 mr-2" title="Dislike"></i>
                                                     {comment.dislikes}
-                                                    <span class="hidden s:inline"></span>
+                                                    <span className="hidden s:inline"></span>
                                                 </a>
                                   &nbsp;
                                   &nbsp;
                                   &nbsp;
-                                  <a class="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left" style={{ cursor: "pointer" }}><title id="a1ay3fcx4bhgcogvadlcjme5rx88wa10">Comments</title>
+                                  <a className="crayons-btn crayons-btn--s crayons-btn--ghost crayons-btn--icon-left" style={{ cursor: "pointer" }}><title id="a1ay3fcx4bhgcogvadlcjme5rx88wa10">Comments</title>
                                     Reply
                                   </a>
                                             </div>
@@ -276,17 +276,17 @@ const View = (props) => {
                     <div className="col-md-4 mb-1">
                         <div className="shadow p-3 mb-1 bg-white rounded-lg">
                             <div className="mr-1">
-                                <h3 class="text-center">Latest on <span className="text-primary">PharmaBlog</span></h3>
+                                <h3 className="text-center">Latest on <span className="text-primary">PharmaBlog</span></h3>
                                 <hr />
                                 {
                                     blogsByPage?.slice(0, 3)?.map(c =>
                                         <div onClick={() => resetView(c)}  style={{cursor: "pointer"}}>
-                                            {/* <!-- <img src="assets/images/nutrition-3.jpg" class="rounded-circle avatar-sm mr-3" alt="..." /> --> */}
+                                            {/* <!-- <img src="assets/images/nutrition-3.jpg" className="rounded-circle avatar-sm mr-3" alt="..." /> --> */}
 
-                                            <div class="media-body">
-                                                <span class="mt-0 mb-1 text-primary font-weight-bold">{c?.title}</span>
+                                            <div className="media-body">
+                                                <span className="mt-0 mb-1 text-primary font-weight-bold">{c?.title}</span>
                                                 <p dangerouslySetInnerHTML={{ __html: addThreeDots(c?.body, 70) }}></p>
-                                            <p class="font-size-xs mb-0">{moment(c?.createdAt).format("MMMM Do, YYYY")}</p>
+                                            <p className="font-size-xs mb-0">{moment(c?.createdAt).format("MMMM Do, YYYY")}</p>
                                             </div>
                                             <hr />
                                         </div>
@@ -301,7 +301,7 @@ const View = (props) => {
                                 {
                                     blogsByPage?.slice(0, 3)?.map(blogView =>
                                         <div onClick={() => resetView(blogView)} style={{cursor: "pointer"}}>
-                                            <h5 class="text-primary font-weight-bold">{blogView.title}</h5>
+                                            <h5 className="text-primary font-weight-bold">{blogView.title}</h5>
                                             <p dangerouslySetInnerHTML={{ __html: addThreeDots(blogView?.body, 70) }}></p>
                                             <hr />
                                         </div>
@@ -309,15 +309,15 @@ const View = (props) => {
                             </div>
                         </div>
                         <div className="shadow p-3 mb-1 bg-transparent rounded-lg">
-                            <div class="mr-1">
-                                <div class="row mt-3 mb-4">
-                                    <div class="col-auto ml-0">
-                                        <img src={IMAGE_URL + blog?.author.profileImage} class="rounded-circle avatar-sm mr-2" />
+                            <div className="mr-1">
+                                <div className="row mt-3 mb-4">
+                                    <div className="col-auto ml-0">
+                                        <img src={IMAGE_URL + blog?.author.profileImage} className="rounded-circle avatar-sm mr-2" />
                                     </div>
                                     <h3 className="text-warning">{blog?.author?.firstName} {blog?.author?.lastName}</h3>
                                 </div>
                                 {/* <h5>Resident Doctor</h5> */}
-                                {/* <button type="button" class="btn btn-primary btn-block mt-2 mb-4">Follow</button> */}
+                                {/* <button type="button" className="btn btn-primary btn-block mt-2 mb-4">Follow</button> */}
                                 <h6 className="text-success">WORK:
                                 <span className="text-secondary ml-2">{blogView?.author.organizationName}</span>
                                 </h6>

@@ -6,8 +6,8 @@ import { showOfflineError } from './store/modules/notification';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-export const API_ROOT = 'http://localhost:4500';  //DEV
-// export const API_ROOT = 'https://pharmakonnect-api.herokuapp.com'; //PRODUCTION
+// export const API_ROOT = 'http://localhost:4500';  //DEV
+export const API_ROOT = 'https://pharmakonnect-api.herokuapp.com'; //PRODUCTION
 export const IMAGE_URL = API_ROOT + '/account/uploads/';
 
 let token = null;
@@ -272,7 +272,7 @@ const Comment = {
   save: (articleId, comment) =>
     requests.post(`/article/${articleId}/comment/`, { message: comment }),
   edit: (articleId, commentId, comment) =>
-    requests.put(`/article/${articleId}/comment/${commentId}`, {message: comment}),
+    requests.put(`/article/${articleId}/comment/${commentId}`, { message: comment }),
   loadAll: (articleId, page, take) =>
     requests.get(`/article/${articleId}/comment`, page, take),
   view: (articleId, commentId) =>
@@ -340,10 +340,22 @@ const Event = {
     requests.put(`/event/publish/${id}`, category),
   loadAllPublished: (id, pageNumber) =>
     requests.get(`/event/published/${id}`, id, pageNumber),
+  registration: (data) =>
+    requests.post('/event/register', data),
 
 };
 
+const UserRegister = {
+  load: (pageNumber) =>
+    requests.get('/eventusers', pageNumber),
+}
+
+
+
+
+
 export default {
+
   Auth,
   User,
   Outlet,
@@ -362,5 +374,6 @@ export default {
   Comment,
   EventType,
   Event,
+  UserRegister,
   setToken: _token => { token = _token; },
 };

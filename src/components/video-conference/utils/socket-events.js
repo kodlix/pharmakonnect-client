@@ -537,17 +537,23 @@ export const SocketEvents = {
                         newVid.autoplay = true;
                         newVid.className = 'remote-video';
 
+                        //username display
+                        // let userNameDiv = document.createElement('div');
+                        // userNameDiv.className = 'remote-video-user';
+                        // userNameDiv.innerHTML = `${sessionStorage.getItem('username')}`;
+
                         //video controls elements
                         let controlDiv = document.createElement('div');
                         controlDiv.className = 'remote-video-controls';
-                        controlDiv.innerHTML = `<i id="mute-remote" style="cursor: pointer;" class="fa fa-microphone text-white pr-3 mute-remote-mic" title="Mute"></i>
-                            <i style="cursor: pointer;" class="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
+                        controlDiv.innerHTML = `<i id="mute-remote" style="cursor: pointer;" className="fa fa-microphone text-white pr-3 mute-remote-mic" title="Mute"></i>
+                            <i style="cursor: pointer;" className="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
 
                         //create a new div for card
                         let cardDiv = document.createElement('div');
                         cardDiv.className = 'card card-sm';
                         cardDiv.id = partnerName;
                         cardDiv.appendChild(newVid);
+                        //cardDiv.appendChild(userNameDiv);
                         cardDiv.appendChild(controlDiv);
 
                         //put div in main-section elem

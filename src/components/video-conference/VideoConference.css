@@ -123,6 +123,21 @@
     max-height: 90vh;
 }
 
+#videos {
+    overflow: hidden;
+}
+
+.remote-video-user {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 300000;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    visibility: hidden;
+    color: white;
+}
 
 .remote-video-controls {
     position: absolute;
@@ -135,6 +150,9 @@
     visibility: hidden;
 }
 
+.remote-video-user:hover {
+    visibility: visible;
+}
 
 .remote-video:hover+.remote-video-controls,
 .remote-video-controls:hover {

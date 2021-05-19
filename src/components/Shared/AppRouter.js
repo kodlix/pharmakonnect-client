@@ -84,6 +84,9 @@ const EditEvent = React.lazy(() => import('../Event/Edit'));
 const CreateEvent = React.lazy(() => import('../Event/Create'));
 const ViewEvent = React.lazy(() => import('../Event/View'));
 
+const EventRegistration = React.lazy(() => import('../EventRegistration/Registration'));
+const RegisteredUsers = React.lazy(() => import('../EventRegistration/RegisteredUsers'));
+
 const ListEventType = React.lazy(() => import('../EventType/List'));
 const CreateEventType = React.lazy(() => import('../EventType/Create'));
 const EditEventType = React.lazy(() => import('../EventType/Edit'));
@@ -134,10 +137,10 @@ const AppRouter = () => {
 
         <ProtectedRoute path="/dashboard" component={Dashboard} />
 
-        <ProtectedRoute path="/conference" exact showHead={false} component={VideoConference} />
-        <ProtectedRoute path="/conference/schedule" exact showHead={false} component={ScheduleMeeting} />
-        <ProtectedRoute path="/conference/list" exact showHead={false} component={ScheduledMeetings} />
-        <ProtectedRoute path="/conference/edit/:id" exact showHead={false} component={EditScheduledMeeting} />
+        <AnonymousRoute path="/conference" exact showHead={false} component={VideoConference} />
+        <AnonymousRoute path="/conference/schedule" exact showHead={false} component={ScheduleMeeting} />
+        <AnonymousRoute path="/conference/list" exact showHead={false} component={ScheduledMeetings} />
+        <AnonymousRoute path="/conference/edit/:id" exact showHead={false} component={EditScheduledMeeting} />
 
         <ProtectedRoute path="/chat" exact showHead={false} component={Chat} />
         <ProtectedRoute path="/chatList/:id" exact showHead={false} component={ChatList} />
@@ -160,6 +163,9 @@ const AppRouter = () => {
         <ProtectedRoute path="/events/edit/:id" exact component={EditEvent} />
         <ProtectedRoute path="/events/new" exact component={CreateEvent} />
         <ProtectedRoute path="/events/view/:id" exact component={ViewEvent} />
+
+        <ProtectedRoute path="/registration/:id" exact component={EventRegistration} />
+        <ProtectedRoute path="/registeredusers/:id" exact component={RegisteredUsers} />
 
         <ProtectedRoute path="/eventtypes" exact component={ListEventType} />
         <ProtectedRoute path="/eventtypes/edit/:id" exact component={EditEventType} />

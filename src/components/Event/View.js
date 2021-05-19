@@ -7,22 +7,22 @@ import { IMAGE_URL } from '../../agent';
 import { deleteEvent, loadEvent } from '../../store/modules/event';
 
 import './Event.css';
-
-
+import moment from 'moment';
 
 const View = (props) => {
     const dispatch = useDispatch();
     const event = useSelector(state => state.event.event);
     console.log({ event })
     const eventId = props.match.params.id;
-
+    console.log({ props });
 
     useEffect(() => {
         dispatch(loadEvent(eventId));
+        dispatch(deleteEvent())
     }, [dispatch]);
 
 
-    const deleteABlog = () => {
+    const handleDeleteEvent = () => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -33,7 +33,7 @@ const View = (props) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                dispatch(deleteEvent(eventId));
+                dispatch(deleteEvent(eventId))
 
             }
 
@@ -62,8 +62,6 @@ const View = (props) => {
     //     reload(!reloaded);
     // }
 
-
-
     return (
         <>
             <div className="view-blog col-lg-9 col-md-8 col-12">
@@ -84,11 +82,15 @@ const View = (props) => {
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <li> <Link to={`/events/edit/${eventId}`} className="dropdown-item">Edit</Link>
                                         </li>
-                                        <span>
-                                            <li className="dropdown-item text-danger" style={{ cursor: "pointer" }} onClick={deleteABlog}>
-                                                Delete
+                                        <li className="dropdown-item text-danger" style={{ cursor: "pointer" }} onClick={handleDeleteEvent}>
+                                            Delete
                                         </li>
-                                        </span>
+                                        <li><Link to={`/registration/${eventId}`} className="dropdown-item" style={{ cursor: "pointer" }}>
+                                            Register </Link>
+                                        </li>
+                                        <li><Link to={`/registeredusers/${eventId}`} className="dropdown-item" style={{ cursor: "pointer" }}>
+                                            Registered Users </Link>
+                                        </li>
                                     </ul>
 
                                 </div>
@@ -97,11 +99,12 @@ const View = (props) => {
                             <div class="card mb-3" style={{ maxWidth: "850px" }}>
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src="../assets/images/event.jpg" alt="..." style={{ float: 'none', height: "400px" }} className="wrap-words" />
+                                        {event.coverImage ? <img src={IMAGE_URL + event.coverImage} alt="Cover Image" style={{ float: 'none', height: "400px", width: "250px" }} className="wrap-words" /> :
+                                            <img src="../assets/images/event.jpg" alt="Cover Image" style={{ float: 'none', height: "400px", width: "250px" }} className="wrap-words" />}
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body wrap-words">
-                                            {/* <h5 class="card-title font-weight-bolder text-center">{event.name}</h5> */}
+                                    <div className="col-md-8">
+                                        <div className="card-body wrap-words">
+                                            {/* <h5 className="card-title font-weight-bolder text-center">{event.name}</h5> */}
                                             <div className="row"></div>
                                             <p class="card-text"><small><span className="font-weight-bold text-primary">Event Name: </span>{event.name}</small></p>
                                             <p class="card-text"><small><span className="font-weight-bold text-primary">Event Type: </span>{event.eventType}</small></p>
@@ -113,20 +116,16 @@ const View = (props) => {
                                             {event.url && <p class="card-text"><small><span className="font-weight-bold text-primary">Url: </span>{event.url}</small></p>}
                                             {event.url && <p class="card-text"><small><span className="font-weight-bold text-primary">Access Code: </span>{event.accessCode}</small></p>}
 
-                                            <p class="card-text"><small><span className="font-weight-bold text-primary">Start Date: </span>{event.startDate} &nbsp;&nbsp; <span className="font-weight-bold text-primary"> End Date: </span> &nbsp;&nbsp; {event.endDate}</small></p>
+                                            <p class="card-text"><small><span className="font-weight-bold text-primary">Start Date: </span>
+                                                {moment(event.startDate).format('MMM D, YYYY')} &nbsp;&nbsp; <span className="font-weight-bold text-primary">
+                                                    End Date: </span> &nbsp;&nbsp;  {moment(event.endDate).format('MMM D, YYYY')}</small></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
-
-
-
             </div>
         </>
     )

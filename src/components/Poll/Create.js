@@ -36,6 +36,7 @@ const Create = () => {
   const [selectedQuestionType, setSelectedQuestionType] = useState('')
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [resetOptions, setResetOptions] = useState([]);
+  const [initialCount, setInitialCount] = useState(2)
 
   const multiOptionQuestionTypes = ['Multi-answer', 'Multi-choice', 'Yes/No', 'True/False'];
 
@@ -60,6 +61,17 @@ const Create = () => {
   }
 
   const handleQuestionTypeChange = (e) => {
+    if(e.target.value === ('Multi-choice' || 'Multi-answer')){
+      setInitialCount(3);
+    }
+
+    if(e.target.value === ('Multi-answer')){
+      setInitialCount(4);
+    }
+
+    if(e.target.value === ('Yes/No' || 'True/False')){
+      setInitialCount(2);
+    }
     setSelectedQuestionType(e.target.value)
   }
 
@@ -68,9 +80,7 @@ const Create = () => {
   }
 
   const addQuestion = (e) => {
-
     e.preventDefault();
-
     if(multiOptionQuestionTypes.includes(selectedQuestionType)) {
       var correctOption = selectedOptions.findIndex(x => x.isCorrect === true);
       if (correctOption === -1) {
@@ -79,7 +89,6 @@ const Create = () => {
       }
     }
      
-
     let pollQuestionTypeInput = document.querySelector('#questionType');
     let pollQuestionContentInput = document.querySelector('#content');
 
@@ -95,6 +104,7 @@ const Create = () => {
     pollQuestionContentInput.value = "";
     pollQuestionTypeInput.selectedIndex = 0;
 
+    setInitialCount(0);
     setResetOptions([]);
 
     console.log(itemToEdit);
@@ -132,7 +142,7 @@ const Create = () => {
                     </h4>
                     <hr />
                     <div className="form-group col-12 col-md-12">
-                      <label className="form-label" for="p_title">
+                      <label className="form-label" htmlFor="p_title">
                         Title
                         {errors.title && (
                           <span className="text-danger">* required</span>
@@ -150,7 +160,7 @@ const Create = () => {
                     </div>
                     {/* Poll Description */}
                     <div className="form-group col-12 col-md-12">
-                      <label className="form-label" for="p_description">
+                      <label className="form-label" htmlFor="p_description">
                         Description{' '}
                         {errors.description && (
                           <span className="text-danger">* required</span>
@@ -167,7 +177,7 @@ const Create = () => {
                       ></textarea>
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label className="form-label" for="p_startDate">
+                      <label className="form-label" htmlFor="p_startDate">
                         Start Date
                         {errors.startDate && (
                           <span className="text-danger">* required</span>
@@ -184,7 +194,7 @@ const Create = () => {
                       />
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label className="form-label" for="p_endDate">
+                      <label className="form-label" htmlFor="p_endDate">
                         End Date
                         {errors.endDate && (
                           <span className="text-danger">* required</span>
@@ -201,7 +211,7 @@ const Create = () => {
                       />
                     </div>
                     <div className="form-group col-12 col-md-12">
-                      <label className="form-label" for="p_hint">
+                      <label className="form-label" htmlFor="p_hint">
                         Hint (Optional)
                       </label>
                       <input
@@ -224,7 +234,7 @@ const Create = () => {
                         ref={register({})}
                       />
 
-                      <label className="form-check-label" for="inlineFormCheck">
+                      <label className="form-check-label" htmlFor="inlineFormCheck">
                         Participant must login to Vote
                       </label>
                     </div>
@@ -250,7 +260,7 @@ const Create = () => {
                     <hr />
                     <div className="mt-3">
                       <div className="form-group col-12">
-                        <label className="form-label" for="address">
+                        <label className="form-label" htmlFor="address">
                           Poll Question
                         </label>
                         <input
@@ -286,17 +296,30 @@ const Create = () => {
                         </select>
                       </div>
                       {selectedQuestionType === 'True/False' && (
-                        <TrueFalseOption />
+                        <TrueFalseOption questionType='True/False'
+                        getSelectedOption={getSelectedOption}
+                        resetOptions={resetOptions}
+                        initialCount={initialCount} />
                       )}
-                      {selectedQuestionType === 'Yes/No' && <YesNoOption />}
+                      {selectedQuestionType === 'Yes/No' && 
+                      <YesNoOption questionType="Yes/No"
+                          getSelectedOption={getSelectedOption}
+                          resetOptions={resetOptions}
+                          initialCount={initialCount} />}
                       {selectedQuestionType === 'Multi-answer' && (
-                        <MultiAnswerOption />
+                        <MultiAnswerOption 
+                        questionType="Multi-answer"
+                        getSelectedOption={getSelectedOption}
+                        resetOptions={resetOptions}
+                        initialCount={initialCount}
+                        />
                       )}
                       {selectedQuestionType === 'Multi-choice' && (
                         <MultiChoiceOption
                           questionType="Multi-choice"
                           getSelectedOption={getSelectedOption}
                           resetOptions={resetOptions}
+                          initialCount={initialCount}
                         />
                       )}
                       {selectedQuestionType === 'Open-ended' && (
@@ -324,7 +347,7 @@ const Create = () => {
             </div>
           </div>
         </form>
-        {<PollPreview poll={itemToEdit} />}
+        {/* {itemToEdit?.questions?.length > 0 && <PollPreview poll={itemToEdit} />} */}
       </div>
     </React.Fragment>
   )

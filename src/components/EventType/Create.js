@@ -22,12 +22,12 @@ const Create = () => {
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)} className='col-lg-9 col-md-8 col-12'>
-                <div className="create-vacancy mb-5">
+                <div className="mb-5">
                     <PageHeader pageTitle={'Create Event Type'}>
                         <Link className="btn btn-primary" to="/eventtypes"><i className="fa fas-back"></i>back</Link>
                     </PageHeader>
                     <div className="">
-                        <div className="shadow p-5  mt-1 mb-5 bg-white rounded">
+                        <div className="shadow p-5  mt-1 mb-5 mb-3 bg-white rounded">
                             <div className="row">
                                 <div className="mb-3 col-md-12">
                                     <label htmlFor="name" className="form-label">Name{errors.name && <span className="text-danger font-weight-bold"> * {errors.name.message}</span>}</label>
@@ -39,7 +39,7 @@ const Create = () => {
                                         ref={register({ required: "Event type name is required" })} />
                                 </div>
                                 <div className="form-group col-12 col-md-12">
-                                    <label className="form-label" for="description">Description {errors.description && <span className="text-danger font-weight-bold"> * {errors.description.message}</span>}</label>
+                                    <label className="form-label" htmlFor="description">Description {errors.description && <span className="text-danger font-weight-bold"> * {errors.description.message}</span>}</label>
                                     <textarea id="p_description"
                                         className="form-control wrap-des"
                                         placeholder="Give a description of the type of event"

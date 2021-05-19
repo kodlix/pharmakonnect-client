@@ -48,7 +48,7 @@ const SelectedQuestions = ({ questions }) => {
                         {option.content}
                         {option.isCorrect && (
                           <span className='bg-success p-1 ml-4 text-light rounded'>
-                             <i class="fas fa-check-circle"></i>
+                             <i className="fas fa-check-circle"></i>
                           </span>
                         )}
                       </li>

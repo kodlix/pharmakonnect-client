@@ -86,12 +86,12 @@ const List = () => {
             </div>
             <div className="apex-charts row">
               {blogs && blogs?.length > 0 && blogs.map(blog =>
-                <Link to={`/blog/view/${blog.id}`} class="col-12 col-md-6">
+                <Link to={`/blog/view/${blog.id}`} className="col-12 col-md-6">
                   {/* <!-- Card --> */}
                   <div className="card mb-1 shadow-lg card-hover zoomCard blog-card mb-3">
                     <div className="card-body">
                       {blog.categories && blog.categories.map(category =>
-                        <button class="btn btn-xs mr-1" style={{ backgroundColor: "#c9d6d6ad" }}>
+                        <button className="btn btn-xs mr-1" style={{ backgroundColor: "#c9d6d6ad" }}>
                           {category.title}
                         </button>
                       )
@@ -99,17 +99,17 @@ const List = () => {
 
                       {
                         blog.rejected && <span className="float-right text-light bg-danger px-1 rounded-circle" title="rejected blog">
-                          <i class="fas fa-exclamation-circle"></i>
+                          <i className="fas fa-exclamation-circle"></i>
                         </span>
                       }
                       {
                         blog.published && <span className="float-right text-light bg-success px-1 rounded-circle" title="published blog">
-                          <i class="fas fa-check-circle"></i>
+                          <i className="fas fa-check-circle"></i>
                         </span>
                       }
                       {
                         !blog.rejected && !blog.published && <span className="float-right text-light bg-warning px-1 rounded-circle" title="pending blog">
-                          <i class="fas fa-info-circle"></i>
+                          <i className="fas fa-info-circle"></i>
                         </span>
                       }
 
@@ -129,18 +129,18 @@ const List = () => {
                           </small>
                         </div>
                       </div>
-                      <div class="" style={{ float: "right", marginTop: "-55px" }}>
+                      <div className="" style={{ float: "right", marginTop: "-55px" }}>
                         <span>
-                          <i class="fas fa-thumbs-up ml-2 text-muted" title="Like"></i>
-                          <small class="hidden s:inline text-muted">&nbsp; 9</small>
+                          <i className="fas fa-thumbs-up ml-2 text-muted" title="Like"></i>
+                          <small className="hidden s:inline text-muted">&nbsp; 9</small>
                         </span>
                         <small>&nbsp;|</small>
                         <span>
-                          <i class="fas fa-thumbs-down ml-2 text-muted" title="Dislike"></i>
-                          <small class="hidden s:inline text-muted">&nbsp; 9</small>
+                          <i className="fas fa-thumbs-down ml-2 text-muted" title="Dislike"></i>
+                          <small className="hidden s:inline text-muted">&nbsp; 9</small>
                         </span><br />
-                        <small class="hidden s:inline text-muted">
-                          <i class="far fa-comment text-muted" title="Comment"></i>
+                        <small className="hidden s:inline text-muted">
+                          <i className="far fa-comment text-muted" title="Comment"></i>
                               &nbsp;{blog?.comments.length} Comments</small>
                       </div>
                     </div>

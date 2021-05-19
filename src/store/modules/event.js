@@ -6,12 +6,14 @@ import agent from "../../agent";
 const defaultState = {
     events: {
     },
-    event: {}
+    event: {},
+    registration: {}
 };
 
 
 // Action types
 const CREATE_EVENT = 'pharmaconnect/event/CREATE_EVENT';
+const CREATE_EVENT_REGISTRATION = 'pharmaconnect/event/CREATE_EVENT_REGISTRATION';
 const LOAD_EVENTS = 'pharmaconnect/event/LOAD_EVENTS';
 const LOAD_EVENT = 'pharmaconnect/event/LOAD_EVENT';
 
@@ -35,6 +37,11 @@ export default function reducer(state = defaultState, action = {}) {
                 ...state,
                 event: action.payload
             };
+        case CREATE_EVENT_REGISTRATION:
+            return {
+                ...state,
+                registration: action.payload
+            };
         default: return state
     }
 };
@@ -46,6 +53,14 @@ export function CreateEvent(data) {
         payload: data
     };
 }
+
+export function CreateEventRegistration(data) {
+    return {
+        type: CREATE_EVENT_REGISTRATION,
+        payload: data
+    };
+}
+
 
 export function LoadEvents(data) {
     return {
@@ -62,8 +77,8 @@ export function LoadEvent(data) {
 }
 
 
-//Actions
 
+//Actions
 export function createEvent(event) {
     return dispatch => {
         return agent.Event.save(event).then(
@@ -109,7 +124,7 @@ export function editEvent(id, event) {
             response => {
                 //handle success
                 dispatch(showSuccessMessage(("Event successfully updated")));
-                dispatch(push(`/events`));
+                dispatch(push("/events"));
             },
             error => {
                 //handle error
@@ -172,6 +187,22 @@ export function loadUserEvents(search, pageNumber) {
             response => {
                 //handle success
                 dispatch(LoadEvents(response));
+            },
+            error => {
+                //handle error
+                dispatch(showErrorMessage(error));
+            }
+        );
+    }
+}
+
+export function createRegistration(data) {
+    return dispatch => {
+        return agent.Event.registration(data).then(
+            response => {
+                //handle success
+                dispatch(showSuccessMessage("You have successfully registered for this event"));
+                dispatch(push("/events"));
             },
             error => {
                 //handle error

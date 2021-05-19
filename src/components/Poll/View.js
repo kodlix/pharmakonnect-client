@@ -47,18 +47,18 @@ const View = (props) => {
         </PageHeader>
         <div className="shadow p-5 mt-1 mb-5 bg-white rounded">
           <div className="">
-            <div class="">
-              <div class="col-lg-12 col-md-12 col-12 pl-1">
-                <p class=""></p>
+            <div className="">
+              <div className="col-lg-12 col-md-12 col-12 pl-1">
+                <p className=""></p>
                 {Date.parse(poll.endDate) > new Date() ? (
-                  <p class="badge bg-secondary text-white">Inactive</p>
+                  <p className="badge bg-secondary text-white">Inactive</p>
                 ) : (
-                  <p class="badge bg-success text-white">Active</p>
+                  <p className="badge bg-success text-white">Active</p>
                 )}
                 <br />
-                <h1 class="mb-2">{poll.title}</h1>
-                <p class="des mb-4">{poll.description}</p>
-                <p class="">
+                <h1 className="mb-2">{poll.title}</h1>
+                <p className="des mb-4">{poll.description}</p>
+                <p className="">
                   <strong>Start date:</strong>{' '}
                   {moment(poll.startDate).format('DD-MMM-YYYY')}
                   <strong className="pl-4">End date:</strong>{' '}
@@ -67,18 +67,18 @@ const View = (props) => {
               </div>
               <hr />
 
-              <div class="mt-3">
+              <div className="mt-3">
                 <h3>Questions ({poll?.questions?.length})</h3>
                 {poll?.questions?.length > 0 &&
                   poll.questions.map((q, index) => (
                     <>
-                      <p class="p-0">
+                      <p className="p-0">
                         <strong>Question Type:</strong> {q.questionType}
                       </p>
-                      <div class="row">
-                        <ul class="list-group ml-3 col-12 pt-2">
-                          <li class="list-group-item active font-weight-bold">
-                            <p class="mb-2 font-weight-larger well">
+                      <div className="row">
+                        <ul className="list-group ml-3 col-12 pt-2">
+                          <li className="list-group-item active font-weight-bold">
+                            <p className="mb-2 font-weight-larger well">
                               <span className="bg-light px-1 mx-2 text-dark">
                                 {index + 1}
                               </span>
@@ -87,7 +87,7 @@ const View = (props) => {
                           </li>
                           {q?.options.length > 0 &&
                             q?.options.map((o, index) => (
-                              <li class="list-group-item" key={o.content}>
+                              <li className="list-group-item" key={o.content}>
                                 <span className="bg-light px-1 mx-2 text-dark">{index + 1}</span>{o.content}
                               </li>
                             ))}

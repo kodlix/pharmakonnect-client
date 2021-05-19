@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AppLogo = () => {
     return (
-        <a className="navbar-brand" href="index.html">
+        <Link className="navbar-brand" to="/">
             <img src="assets/img/logo.png" alt="logo" />
-        </a>
+        </Link>
     );
 }
 

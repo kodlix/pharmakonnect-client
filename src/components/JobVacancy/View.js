@@ -136,16 +136,16 @@ const View = (props) => {
                         <div className="d-flex justify-content-between"> <h5 className="text-success">Company Information</h5>
                             {job.rejected && job.accountId === user?.accountId && <div className="text-danger border-danger status-frame text-center"><span className="text-bold">Rejected!</span><div><a data-toggle="modal" data-target="#rejection-detail" className="rejection-seeDetails">view details</a></div></div>} 
                             {job.approved && job.accountId === user?.accountId && <span className="text-success status-frame">Approved!</span>}</div>
-                        <div class="modal fade voice_pop" id="rejection-detail" role="document">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content ml-3">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title d-flex justify-content-between w-100">
+                        <div className="modal fade voice_pop" id="rejection-detail" role="document">
+                            <div className="modal-dialog modal-dialog-centered">
+                                <div className="modal-content ml-3">
+                                    <div className="modal-header">
+                                        <h4 className="modal-title d-flex justify-content-between w-100">
                                             Rejection Details
                                             <i className="fas fa-window-close text-danger" data-dismiss="modal"></i>
                                         </h4>
                                     </div>
-                                    <div class="modal-body">
+                                    <div className="modal-body">
                                         {job.rejectionMessage}
                                     </div>
                                 </div>

@@ -633,11 +633,11 @@ const CallLog = () => {
                                                     <input className="form-control form-control-lg group_formcontrol" name="new-chat-title" type="text" placeholder="Group Name" />
                                                 </div>
                                                 <div className="form-group">
-                                                    <label for="new-chat-topic">Topic (optional)</label>
+                                                    <label htmlFor="new-chat-topic">Topic (optional)</label>
                                                     <input className="form-control form-control-lg group_formcontrol" name="new-chat-topic" id="new-chat-topic" type="text" placeholder="Group Topic" />
                                                 </div>
                                                 <div className="form-group mb-0">
-                                                    <label for="new-chat-description">Description</label>
+                                                    <label htmlFor="new-chat-description">Description</label>
                                                     <textarea className="form-control form-control-lg group_control_text" name="new-chat-description" id="new-chat-description" rows="6" placeholder="Group Description"></textarea>
                                                 </div>
                                             </form>
@@ -677,13 +677,13 @@ const CallLog = () => {
                                                             <div className="align-self-center ml-auto">
                                                                 <div className="custom-control custom-checkbox">
                                                                     <input className="custom-control-input" id="id-user-1" type="checkbox" />
-                                                                    <label className="custom-control-label" for="id-user-1"></label>
+                                                                    <label className="custom-control-label" htmlFor="id-user-1"></label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-1"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-1"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -703,13 +703,13 @@ const CallLog = () => {
                                                             <div className="align-self-center ml-auto">
                                                                 <div className="custom-control custom-checkbox">
                                                                     <input className="custom-control-input" id="id-user-2" type="checkbox" />
-                                                                    <label className="custom-control-label" for="id-user-2"></label>
+                                                                    <label className="custom-control-label" htmlFor="id-user-2"></label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-2"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-2"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -729,13 +729,13 @@ const CallLog = () => {
                                                             <div className="align-self-center ml-auto">
                                                                 <div className="custom-control custom-checkbox">
                                                                     <input className="custom-control-input" id="id-user-3" type="checkbox" />
-                                                                    <label className="custom-control-label" for="id-user-3"></label>
+                                                                    <label className="custom-control-label" htmlFor="id-user-3"></label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-3"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-3"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -755,13 +755,13 @@ const CallLog = () => {
                                                             <div className="align-self-center ml-auto">
                                                                 <div className="custom-control custom-checkbox">
                                                                     <input className="custom-control-input" id="id-user-4" type="checkbox" />
-                                                                    <label className="custom-control-label" for="id-user-4"></label>
+                                                                    <label className="custom-control-label" htmlFor="id-user-4"></label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-4"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-4"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -781,13 +781,13 @@ const CallLog = () => {
                                                             <div className="align-self-center ml-auto">
                                                                 <div className="custom-control custom-checkbox">
                                                                     <input className="custom-control-input" id="id-user-5" type="checkbox" />
-                                                                    <label className="custom-control-label" for="id-user-5"></label>
+                                                                    <label className="custom-control-label" htmlFor="id-user-5"></label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-5"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-5"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -807,13 +807,13 @@ const CallLog = () => {
                                                             <div className="align-self-center ml-auto">
                                                                 <div className="custom-control custom-checkbox">
                                                                     <input className="custom-control-input" id="id-user-6" type="checkbox" />
-                                                                    <label className="custom-control-label" for="id-user-6"></label>
+                                                                    <label className="custom-control-label" htmlFor="id-user-6"></label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-6"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-6"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 {/* <!-- Friend --> */}
@@ -830,13 +830,13 @@ const CallLog = () => {
                                                             <div className="align-self-center ml-auto">
                                                                 <div className="custom-control custom-checkbox">
                                                                     <input className="custom-control-input" id="id-user-7" type="checkbox" />
-                                                                    <label className="custom-control-label" for="id-user-7"></label>
+                                                                    <label className="custom-control-label" htmlFor="id-user-7"></label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-7"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-7"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -857,13 +857,13 @@ const CallLog = () => {
                                                             <div className="align-self-center ml-auto">
                                                                 <div className="custom-control custom-checkbox">
                                                                     <input className="custom-control-input" id="id-user-8" type="checkbox" />
-                                                                    <label className="custom-control-label" for="id-user-8"></label>
+                                                                    <label className="custom-control-label" htmlFor="id-user-8"></label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-8"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-8"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                             </nav>
@@ -964,7 +964,7 @@ const CallLog = () => {
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-1"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-1"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -1006,7 +1006,7 @@ const CallLog = () => {
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-2"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-2"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -1048,7 +1048,7 @@ const CallLog = () => {
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-3"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-3"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -1090,7 +1090,7 @@ const CallLog = () => {
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-4"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-4"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -1132,7 +1132,7 @@ const CallLog = () => {
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-5"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-5"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -1174,7 +1174,7 @@ const CallLog = () => {
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-6"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-6"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 {/* <!-- Friend --> */}
@@ -1212,7 +1212,7 @@ const CallLog = () => {
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-7"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-7"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                                 <div className="mb-6">
@@ -1253,7 +1253,7 @@ const CallLog = () => {
                                                         </div>
                                                     </div>
                                                     {/* <!-- Label --> */}
-                                                    <label className="stretched-label" for="id-user-8"></label>
+                                                    <label className="stretched-label" htmlFor="id-user-8"></label>
                                                 </div>
                                                 {/* <!-- Friend --> */}
                                             </nav>
@@ -1367,19 +1367,19 @@ const CallLog = () => {
                                         </a>
                                     </div>
                                     <div className="mt-3">
-                                        <label for="profile-name">Name</label>
+                                        <label htmlFor="profile-name">Name</label>
                                         <input className="form-control form-control-lg profile_input group_formcontrol" name="profile-name" id="profile-name" type="text" placeholder="Type your name" />
                                     </div>
                                     <div className="mt-4">
-                                        <label for="profile-name">Current Password</label>
+                                        <label htmlFor="profile-name">Current Password</label>
                                         <input className="form-control form-control-lg group_formcontrol" name="profile-name" id="profile-name_pswd" type="text" placeholder="Current Password" />
                                     </div>
                                     <div className="mt-4">
-                                        <label for="profile-name">New Password</label>
+                                        <label htmlFor="profile-name">New Password</label>
                                         <input className="form-control form-control-lg group_formcontrol" name="profile-name" id="profile-name_new" type="text" placeholder="New Password" />
                                     </div>
                                     <div className="mt-4">
-                                        <label for="profile-name">Verify Password</label>
+                                        <label htmlFor="profile-name">Verify Password</label>
                                         <input className="form-control form-control-lg group_formcontrol" name="profile-name" id="profile-name_prfname" type="text" placeholder="Verify Password" />
                                     </div>
                                     <div className="mt-3 text-center">

@@ -132,17 +132,17 @@ const List = () => {
                                                     } </span>
                                                 {
                                                     blog?.rejected && <span className="float-right text-light bg-danger px-1 rounded-circle" title="rejected blog">
-                                                        <i class="fas fa-exclamation-circle"></i>
+                                                        <i className="fas fa-exclamation-circle"></i>
                                                     </span>
                                                 }
                                                 {
                                                     blog?.published && <span className="float-right text-light bg-success px-1 rounded-circle" title="published blog">
-                                                        <i class="fas fa-check-circle"></i>
+                                                        <i className="fas fa-check-circle"></i>
                                                     </span>
                                                 }
                                                 {
                                                     !blog?.rejected && !blog?.published && <span className="float-right text-light bg-warning px-1 rounded-circle" title="pending blog">
-                                                        <i class="fas fa-info-circle"></i>
+                                                        <i className="fas fa-info-circle"></i>
                                                     </span>
                                                 }
 
@@ -185,10 +185,10 @@ const List = () => {
                                                             } </p>
                                                     </div>
                                                     <div className="col-auto">
-                                                        <div class="row align-items-center no-gutters">
-                                                            <span class="ml-5">
-                                                                <i class="far fa-comment text-muted" title="Comment"></i>
-                                                                <small class="hidden s:inline text-muted">&nbsp;{
+                                                        <div className="row align-items-center no-gutters">
+                                                            <span className="ml-5">
+                                                                <i className="far fa-comment text-muted" title="Comment"></i>
+                                                                <small className="hidden s:inline text-muted">&nbsp;{
                                                                     blog?.comments.length
                                                                 }
                                                                 Comments</small>

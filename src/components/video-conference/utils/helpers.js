@@ -148,22 +148,29 @@ export const h =  {
 
          return {
             iceServers: [
-                {   
-                    urls: [ "stun:eu-turn5.xirsys.com" ]
-                }, 
-                { 
-                    username: "xK9j0UGTysq63hM66gBMcYL7i-BNNHdkWsSc8ngA3hJIHL3BUtF_lU9v9Ym7d57jAAAAAGA5NQh6YWNr",   
-                    credential: "3234a6dc-785b-11eb-b961-0242ac140004",   
-                    urls:  [ 
-                               "turn:eu-turn5.xirsys.com:80?transport=udp",       
-                               "turn:eu-turn5.xirsys.com:3478?transport=udp",      
-                               "turn:eu-turn5.xirsys.com:80?transport=tcp",       
-                               "turn:eu-turn5.xirsys.com:3478?transport=tcp",       
-                               "turns:eu-turn5.xirsys.com:443?transport=tcp",       
-                               "turns:eu-turn5.xirsys.com:5349?transport=tcp"   
-                            ]
+                {
+                    urls: 'turn:172.17.19.101:3478',
+                    username: 'netoprnd',
+                    credential: '!Pass4sure###'
                 }
             ]
+            // iceServers: [
+            //     {   
+            //         urls: [ "stun:eu-turn5.xirsys.com" ]
+            //     }, 
+            //     { 
+            //         username: "xK9j0UGTysq63hM66gBMcYL7i-BNNHdkWsSc8ngA3hJIHL3BUtF_lU9v9Ym7d57jAAAAAGA5NQh6YWNr",   
+            //         credential: "3234a6dc-785b-11eb-b961-0242ac140004",   
+            //         urls:  [ 
+            //                    "turn:eu-turn5.xirsys.com:80?transport=udp",       
+            //                    "turn:eu-turn5.xirsys.com:3478?transport=udp",      
+            //                    "turn:eu-turn5.xirsys.com:80?transport=tcp",       
+            //                    "turn:eu-turn5.xirsys.com:3478?transport=tcp",       
+            //                    "turns:eu-turn5.xirsys.com:443?transport=tcp",       
+            //                    "turns:eu-turn5.xirsys.com:5349?transport=tcp"   
+            //                 ]
+            //     }
+            // ]
          };
     },
 
@@ -386,8 +393,8 @@ export const h =  {
             //video controls elements
             let controlDiv = document.createElement( 'div' );
             controlDiv.className = 'remote-video-controls';
-            controlDiv.innerHTML = `<i class="fa fa-microphone text-white pr-3 mute-remote-mic" title="Mute"></i>
-                <i class="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
+            controlDiv.innerHTML = `<i className="fa fa-microphone text-white pr-3 mute-remote-mic" title="Mute"></i>
+                <i className="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
 
             //create a new div for card
             let cardDiv = document.createElement( 'div' );

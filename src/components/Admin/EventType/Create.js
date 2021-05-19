@@ -39,7 +39,7 @@ const Create = () => {
                                         ref={register({ required: "Event type name is required" })} />
                                 </div>
                                 <div className="form-group col-12 col-md-12">
-                                    <label className="form-label" for="description">Description {errors.description && <span className="text-danger font-weight-bold"> * {errors.description.message}</span>}</label>
+                                    <label className="form-label" htmlFor="description">Description {errors.description && <span className="text-danger font-weight-bold"> * {errors.description.message}</span>}</label>
                                     <textarea id="p_description"
                                         className="form-control"
                                         placeholder="Give a description of the type of event"

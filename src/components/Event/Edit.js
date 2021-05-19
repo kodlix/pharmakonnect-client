@@ -9,6 +9,7 @@ import { editEvent, loadEvent } from '../../store/modules/event';
 
 import './Event.css';
 import "react-datepicker/dist/react-datepicker.css";
+import { validFileType } from '../Shared/helpers/file';
 
 
 const Edit = (props) => {
@@ -30,6 +31,8 @@ const Edit = (props) => {
     const [eventIsFree, setEventIsFree] = useState(true);
     const [showUrlInput, setShowUrlInput] = useState(true);
     const [itemToEdit, setItemToEdit] = useState({});
+    const [coverImage, setCoverImage] = useState("")
+
     const eventTypeLoaded = useSelector(state => state.eventType.eventTypes);
     const event = useSelector(state => state.event.event);
     console.log({ Event })
@@ -47,6 +50,18 @@ const Edit = (props) => {
         // }
 
     }, [event]);
+
+    const handleChange = e => {
+        if (e.target.files.length) {
+            const valid = validFileType(e.target.files[0])
+            if (!valid) {
+                alert("only image of type (png, jpg, jpeg) file is allowed");
+                return;
+            }
+
+            setCoverImage(e.target.files[0]);
+        }
+    };
 
     useEffect(() => {
         dispatch(loadEvent(eventId));
@@ -127,28 +142,35 @@ const Edit = (props) => {
         } else {
 
         }
-        eventdata.cost = parseInt(eventdata.cost);
-        eventdata.numberOfParticipants = parseInt(eventdata.numberOfParticipants);
+        eventdata.cost = toString(eventdata.cost);
+        eventdata.numberOfParticipants = toString(eventdata.numberOfParticipants);
         console.log({ eventdata });
 
-        eventdata.organizerName = itemToEdit.organizerName;
-        eventdata.organizerPhoneNumber = itemToEdit.organizerPhoneNumber;
-        eventdata.name = itemToEdit.name;
-        eventdata.eventType = itemToEdit.eventType;
-        eventdata.numberOfParticipants = itemToEdit.numberOfParticipants;
-        eventdata.cost = itemToEdit.cost;
-        eventdata.startTime = itemToEdit.startTime;
-        eventdata.endTime = itemToEdit.endTime;
-        eventdata.startDate = itemToEdit.startDate;
-        eventdata.endDate = itemToEdit.endDate;
-        eventdata.venue = itemToEdit.venue;
-        eventdata.accessCode = itemToEdit.accessCode;
-        eventdata.requireAccessCode = itemToEdit.requireAccessCode;
-        eventdata.url = itemToEdit.url;
-        eventdata.description = itemToEdit.description;
-        console.log({ eventdata })
+        const formData = new FormData();
 
-        dispatch(editEvent(eventId, eventdata));
+        formData.append('organizerName', eventdata.organizerName = itemToEdit.organizerName);
+        formData.append('organizerPhoneNumber', eventdata.organizerPhoneNumber = itemToEdit.organizerPhoneNumber);
+        formData.append('name', eventdata.name = itemToEdit.name);
+        formData.append('eventType', eventdata.eventType = itemToEdit.eventType);
+        formData.append('numberOfParticipants', eventdata.numberOfParticipants = itemToEdit.numberOfParticipants);
+        formData.append('cost', eventdata.cost = itemToEdit.cost);
+        formData.append('startTime', eventdata.startTime = itemToEdit.startTime);
+        formData.append('endTime', eventdata.endTime = itemToEdit.endTime);
+        formData.append('startDate', eventdata.startDate = itemToEdit.startDate);
+        formData.append('endDate', eventdata.endDate = itemToEdit.endDate);
+        formData.append('venue', eventdata.venue = itemToEdit.venue);
+        formData.append('accessCode', eventdata.accessCode = itemToEdit.accessCode);
+        formData.append('requireUniqueAccessCode', eventdata.requireUniqueAccessCode = itemToEdit.requireUniqueAccessCode);
+        formData.append('url', eventdata.url = itemToEdit.url);
+        formData.append('description', eventdata.description = itemToEdit.description);
+        formData.append('coverImage', eventdata.coverImage = itemToEdit.coverImage);
+        formData.append('requireRegistration', eventdata.coverImage = itemToEdit.requireRegistration);
+        formData.append('online', eventdata.coverImage = itemToEdit.online);
+        formData.append('free', eventdata.coverImage = itemToEdit.free);
+
+        console.log({ formData })
+
+        dispatch(editEvent(eventId, formData));
     }
 
 
@@ -258,7 +280,6 @@ const Edit = (props) => {
                                         className="form-control"
                                         name="cost"
                                         id="cost"
-                                        // defaultValue="0.00"
                                         disabled={eventIsFree}
                                         defaultValue={"0.00" || itemToEdit?.numberOfParticipants}
                                         onChange={(e) => handleOnChange(e)}
@@ -412,7 +433,7 @@ const Edit = (props) => {
                                             id="coverImage"
                                             name="coverImage"
                                             defaultValue={itemToEdit?.coverImage}
-                                            onChange={(e) => handleOnChange(e)}
+                                            onChange={handleOnChange}
                                             ref={register()}
                                         />
                                     </div>

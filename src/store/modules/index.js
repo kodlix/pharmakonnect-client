@@ -16,6 +16,7 @@ import error from './error';
 import scheduleMeeting from './scheduleMeeting';
 import eventType from './eventType';
 import event from './event';
+import userRegister from './userRegister';
 
 
 import { connectRouter } from 'connected-react-router';
@@ -39,6 +40,7 @@ const appReducer = (history) => combineReducers({
   scheduleMeeting,
   eventType,
   event,
+  userRegister,
 });
 
 export default appReducer;

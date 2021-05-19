@@ -1,13 +1,17 @@
 import React, {useState, useEffect} from 'react';
 
-const MultiChoiceOption = ({questionType, getSelectedOption, resetOptions }) => {
-    const [optionCount, setOptionCount] = useState(3);
+const MultiChoiceOption = ({questionType, getSelectedOption, resetOptions, initialCount }) => {
+    const [optionCount, setOptionCount] = useState(initialCount);
     const [selectedResults, setSelectedResults] = useState([])
     const [elementId, ] = useState(Date.now().toString())
 
     useEffect(() => {
         setSelectedResults([]);
     }, [resetOptions])
+
+    useEffect(() => {
+        setOptionCount(initialCount);
+    }, [initialCount])
     
 
     const handleOnBlur = (e) => {
@@ -80,7 +84,7 @@ const MultiChoiceOption = ({questionType, getSelectedOption, resetOptions }) => 
     const optionElements = [];
         for (var i = 0; i < optionCount; i++) {
             optionElements.push(
-            <div className="input-group col-12 col-md-10 mb-2" id={'option-div-' + (i + '@' +  elementId)}>
+            <div key={i + '@' +  elementId} className="input-group col-12 col-md-10 mb-2" id={'option-div-' + (i + '@' +  elementId)}>
                 <div className="input-group-prepend">
                     <div className="input-group-text">
                         <input type="radio" name={'option-radio-' + elementId} id={'option-radio-' + (i + '@' +  elementId)}
@@ -101,7 +105,7 @@ const MultiChoiceOption = ({questionType, getSelectedOption, resetOptions }) => 
 
         return ( 
             <div className="form-group col-12">
-                <label className="form-label" for="address">Question Options
+                <label className="form-label" htmlFor="address">Question Options
                     <small className="mx-1">(select one correct option)</small>
                 </label>
 

@@ -16,7 +16,7 @@ const List = (props) => {
     const [events, setEvents] = useState([]);
     const [search, setSearch] = useState("");
 
-
+    console.log({ allEvents })
     useEffect(() => {
         setEvents(allEvents)
     }, [allEvents])
@@ -52,8 +52,6 @@ const List = (props) => {
         }
     }
 
-
-
     return (
         <>
             <div className="list-poll col-lg-9 col-md-8 col-12">
@@ -64,9 +62,6 @@ const List = (props) => {
                     </Link>
                 </PageHeader>
                 <div className="card mt-1">
-                    {/* <div className="card-header">
-            <h3 className="h4 text-primary mb-0">Post a Blog</h3>
-          </div> */}
                     <div className="card-body">
                         <div className="flush-nav">
                             <nav className="nav mb-3">
@@ -86,9 +81,10 @@ const List = (props) => {
                             {events && events.length > 0 && events.map(event =>
 
                                 <Link to={`/events/view/${event.id}`} className="col-12 col-md-4">
-                                    {/* <!-- Card --> */}
                                     <div className="card mb-1 shadow-lg card-hover zoomCard">
-                                        <img src="..." className="card-header card-img-top" alt="..." />
+                                        {event.coverImage ? <img src={IMAGE_URL + event.coverImage} alt="Cover Image" width="230px" height="150px" /> :
+                                            <img src="../assets/images/event.jpg" alt="Cover Image" width="230px" height="150px" />
+                                        }
                                         <div className="card-body">
                                             {
                                                 event.rejected && <span className="float-right text-light bg-danger px-1 rounded-circle" title="rejected event">
@@ -112,7 +108,7 @@ const List = (props) => {
                                             <hr />
                                             <div className="row no-gutters">
                                                 <div className="col-auto">
-                                                    {/* <img src={IMAGE_URL + event?.author?.profileImage} alt="" className="rounded-circle avatar-sm mr-2" /> */}
+
                                                     <small className="text-muted">
                                                         <span className="font-weight-bold"> Name: </span> {event.name} <br />
                                                         <small className="text-muted">
@@ -133,13 +129,6 @@ const List = (props) => {
                                                     </small>
                                                 </div>
                                             </div>
-                                            {/* <div className="" style={{ float: "right", marginTop: "-20px" }}>
-
-                                                <p className="hidden s:inline text-muted">
-                                                    Venue:  &nbsp;{event.venue}</p>
-
-                                            </div> */}
-
                                         </div>
                                     </div>
                                 </Link>
